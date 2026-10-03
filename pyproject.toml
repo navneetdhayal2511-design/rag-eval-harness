@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rageval"
+version = "0.1.0"
+description = "An evaluation and regression-testing harness for retrieval-augmented generation systems."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Navneet Dhayal" }]
+keywords = ["rag", "evaluation", "retrieval", "llm", "benchmarking"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "pydantic>=2.5",
+    "typer>=0.12",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.30"]
+sbert = ["sentence-transformers>=2.7"]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+    "types-PyYAML",
+]
+
+[project.scripts]
+rageval = "rageval.cli:app"
+
+[project.urls]
+Repository = "https://github.com/navneetdhayal2511-design/rag-eval-harness"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rageval"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RET", "ARG", "PTH"]
+# B008: typer declares CLI options as argument defaults.
+# B027: the component base classes expose optional lifecycle hooks (fit, index)
+#       that most implementations legitimately leave empty.
+ignore = ["B008", "B027"]
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["rageval"]
+mypy_path = "src"
+strict = true
+warn_unreachable = true
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "scipy.*", "openai.*", "sentence_transformers.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error::DeprecationWarning"]

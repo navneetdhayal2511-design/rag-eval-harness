@@ -1,0 +1,43 @@
+# hybrid-rrf plus an MMR reranking stage. The question this answers is whether
+# diversifying the context window buys anything once fusion has already run.
+name: hybrid-rrf-mmr
+
+dataset:
+  corpus_dir: ../datasets/aurora-health/corpus
+  questions: ../datasets/aurora-health/questions.jsonl
+  human_labels: ../datasets/aurora-health/human_labels.jsonl
+
+chunker:
+  name: section
+  options:
+    max_chars: 1200
+
+retriever:
+  type: hybrid
+  options:
+    mode: rrf
+    candidate_multiplier: 6
+  arms:
+    - type: bm25
+    - type: dense
+      embedder:
+        name: tfidf-svd
+        options:
+          dim: 192
+
+rerank:
+  type: mmr
+  candidate_multiplier: 4
+  options:
+    diversity: 0.3
+  embedder:
+    name: tfidf-svd
+    options:
+      dim: 192
+
+top_k: 14
+
+# Shared context budget. Every pipeline in the sweep shows the generator the
+# same amount of text, so chunking strategies are compared on what they put in
+# that budget rather than on how large their chunks happen to be.
+context_chars: 2000

@@ -1,0 +1,34 @@
+# Same arms as hybrid-rrf, fused by min-max normalised score instead of rank.
+# Tests whether keeping score magnitude is worth its sensitivity to outliers.
+name: hybrid-weighted
+
+dataset:
+  corpus_dir: ../datasets/aurora-health/corpus
+  questions: ../datasets/aurora-health/questions.jsonl
+  human_labels: ../datasets/aurora-health/human_labels.jsonl
+
+chunker:
+  name: section
+  options:
+    max_chars: 1200
+
+retriever:
+  type: hybrid
+  options:
+    mode: weighted
+    weights: [0.6, 0.4]
+    candidate_multiplier: 6
+  arms:
+    - type: bm25
+    - type: dense
+      embedder:
+        name: tfidf-svd
+        options:
+          dim: 192
+
+top_k: 14
+
+# Shared context budget. Every pipeline in the sweep shows the generator the
+# same amount of text, so chunking strategies are compared on what they put in
+# that budget rather than on how large their chunks happen to be.
+context_chars: 2000

@@ -1,0 +1,44 @@
+# Thresholds enforced by `rageval gate` in CI against baselines/bm25-fixed.json.
+#
+# `min` is an absolute floor that holds regardless of history. `max_drop` is the
+# largest tolerated move against the stored baseline.
+#
+# Floors sit a little below each metric's bootstrap lower bound on the baseline
+# run, so ordinary resampling noise does not fail the build while a genuine
+# collapse still does. `require_significance` is the second half of that: a drop
+# has to clear both the size limit and a paired test before it breaks CI. A gate
+# that fails at random is a gate people learn to re-run until it passes.
+
+require_significance: true
+alpha: 0.05
+seed: 0
+
+thresholds:
+  # Budget-relative metrics. These are the ones that stay meaningful if the
+  # chunking strategy changes.
+  - metric: recall@budget
+    min: 0.65
+    max_drop: 0.05
+
+  - metric: ndcg@budget
+    min: 0.72
+    max_drop: 0.04
+
+  - metric: mrr
+    min: 0.78
+    max_drop: 0.04
+
+  - metric: citation_precision
+    min: 0.68
+    max_drop: 0.05
+
+  - metric: judge_correct
+    min: 0.72
+    max_drop: 0.06
+
+# groundedness and abstention_correct are deliberately not gated. Both are
+# degenerate under the default extractive answerer: it builds its answer out of
+# the sentences it cites, so groundedness is 1.000 by construction, and it has
+# no usable abstention signal, so abstention_correct only reports the share of
+# questions that are answerable. They become informative with an LLM answerer
+# and should be added here once one is in use.

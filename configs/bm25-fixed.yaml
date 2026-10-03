@@ -1,0 +1,24 @@
+# Baseline: the pipeline most people ship first. Fixed-width windows, lexical
+# search only. Everything else in the sweep is measured against this.
+name: bm25-fixed
+
+dataset:
+  corpus_dir: ../datasets/aurora-health/corpus
+  questions: ../datasets/aurora-health/questions.jsonl
+  human_labels: ../datasets/aurora-health/human_labels.jsonl
+
+chunker:
+  name: fixed
+  options:
+    window: 180
+    stride: 135
+
+retriever:
+  type: bm25
+
+top_k: 14
+
+# Shared context budget. Every pipeline in the sweep shows the generator the
+# same amount of text, so chunking strategies are compared on what they put in
+# that budget rather than on how large their chunks happen to be.
+context_chars: 2000

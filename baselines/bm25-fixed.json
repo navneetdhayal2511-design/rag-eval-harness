@@ -1,0 +1,6630 @@
+{
+  "run_id": "baseline",
+  "pipeline": "bm25-fixed",
+  "config": {
+    "name": "bm25-fixed",
+    "dataset": {
+      "corpus_dir": "C:\\Users\\NAVNEET\\Desktop\\rag-eval-harness\\datasets\\aurora-health\\corpus",
+      "questions": "C:\\Users\\NAVNEET\\Desktop\\rag-eval-harness\\datasets\\aurora-health\\questions.jsonl",
+      "human_labels": "C:\\Users\\NAVNEET\\Desktop\\rag-eval-harness\\datasets\\aurora-health\\human_labels.jsonl"
+    },
+    "chunker": {
+      "name": "fixed",
+      "options": {
+        "window": 180,
+        "stride": 135
+      }
+    },
+    "retriever": {
+      "type": "bm25",
+      "options": {},
+      "embedder": null,
+      "arms": []
+    },
+    "rerank": null,
+    "answerer": {
+      "name": "extractive",
+      "options": {}
+    },
+    "judge": {
+      "name": "lexical",
+      "options": {}
+    },
+    "top_k": 14,
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "context_chars": 2000,
+    "seed": 0
+  },
+  "records": [
+    {
+      "qid": "q001",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 11.626667022705078
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 10.458536148071289
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 10.248003005981445
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 6.577197074890137
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 6.410549163818359
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 6.24205207824707
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 5.126001834869385
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.898556709289551
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 4.631503105163574
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 4.566460609436035
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 3.9030232429504395
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 3.513270616531372
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.1242434978485107
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.8591370582580566
+          }
+        ]
+      },
+      "answer": {
+        "text": "Any benefit not expressly varied in this schedule follows the Essential plan. The Premier plan carries an annual benefit maximum of 2,000,000 units per\ninsured person per policy year. The annual out-of-pocket maximum under the Premier plan is 18,000 units\nper person.",
+        "citations": [
+          "plan-premier::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.822799997171387,
+      "generation_ms": 0.7388999802060425
+    },
+    {
+      "qid": "q002",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 10.211519241333008
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 7.374359130859375
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 5.252303123474121
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 5.012589454650879
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 4.11122989654541
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.6812191009521484
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.6431775093078613
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.332334041595459
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2635741233825684
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.0682315826416016
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.056839942932129
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.034942626953125
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 1.9907790422439575
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 1.9745620489120483
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Aurora Essential Plan — Schedule of Benefits The Essential plan carries an annual benefit maximum of 500,000 units per\ninsured person per policy year. A family covered\nunder a single policy satisfies its deductible obligation once the combined\neligible expenses of all insured members reach 15,000 units in the policy year,\nafter which no further individual deductible applies to any member.",
+        "citations": [
+          "plan-essential::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 2.415999973891303,
+      "generation_ms": 0.683899997966364
+    },
+    {
+      "qid": "q003",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 7.752549171447754
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 7.448482990264893
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 7.223623752593994
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 6.874081134796143
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 6.373214244842529
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 5.298192501068115
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.0198869705200195
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.6431775093078613
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.6086363792419434
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.332334041595459
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.3121981620788574
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.7593536376953125
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 1.9551912546157837
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Aurora Essential Plan — Schedule of Benefits The Essential plan carries an annual benefit maximum of 500,000 units per\ninsured person per policy year. For out-of-network\nproviders Aurora pays 55 per cent of the allowed amount, and any balance billed\nabove the allowed amount is the member's responsibility and does not accrue\ntoward the out-of-pocket maximum.",
+        "citations": [
+          "plan-essential::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.8213999865110964,
+      "generation_ms": 0.6333999917842448
+    },
+    {
+      "qid": "q004",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 15.830516815185547
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 13.730069160461426
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 7.608719348907471
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 7.340638637542725
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 6.6565470695495605
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 5.672557353973389
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.6812191009521484
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.6431775093078613
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.332334041595459
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.969425678253174
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.5532822608947754
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.3055946826934814
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2635741233825684
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          }
+        ]
+      },
+      "answer": {
+        "text": "For out-of-network\nproviders Aurora pays 55 per cent of the allowed amount, and any balance billed\nabove the allowed amount is the member's responsibility and does not accrue\ntoward the out-of-pocket maximum. The annual out-of-pocket maximum under the Essential plan is 40,000 units per\nperson. Premiums, balance billing and penalties for missed pre-authorisation do not.",
+        "citations": [
+          "plan-essential::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.47610001638531685,
+      "generation_ms": 1.0031000128947198
+    },
+    {
+      "qid": "q005",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 8.066934585571289
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 7.678900241851807
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 6.435439109802246
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 4.905303478240967
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.9414143562316895
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 3.827406883239746
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.166649341583252
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 2.7562146186828613
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.6992788314819336
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 2.3972818851470947
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.2476582527160645
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.012953519821167
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.6472934484481812
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 0.5859943628311157
+          }
+        ]
+      },
+      "answer": {
+        "text": "expenses and the member pays the remaining 20 per cent. Room and board are covered at the semi-private rate. Where a member elects a\nprivate room without medical necessity, Aurora reimburses the semi-private rate\nand the difference is borne by the member.",
+        "citations": [
+          "plan-essential::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.599599996348843,
+      "generation_ms": 0.35099999513477087
+    },
+    {
+      "qid": "q006",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 10.0596284866333
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 9.389497756958008
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 8.864201545715332
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 8.238354682922363
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 6.236860752105713
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 4.768430709838867
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 4.242713928222656
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.982974052429199
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 2.8524281978607178
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.3488495349884033
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2635741233825684
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.1733381748199463
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 2.11167311668396
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 1.771784782409668
+          }
+        ]
+      },
+      "answer": {
+        "text": "up to\ntwelve consultations per person per policy year. Physiotherapy is limited to twenty sessions per policy year under the Essential\nplan. The Essential plan covers one routine dental examination and one cleaning per\npolicy year at 100 per cent.",
+        "citations": [
+          "plan-essential::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 2.3327999806497246,
+      "generation_ms": 0.22310001077130437
+    },
+    {
+      "qid": "q007",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 12.656980514526367
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 11.459251403808594
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 4.99462890625
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.494322299957275
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.383791923522949
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 4.0812201499938965
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.677419424057007
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.651853084564209
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.6011805534362793
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.4305825233459473
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 3.2344508171081543
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 3.107750415802002
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.978795051574707
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 1.850373387336731
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Prescription drugs Branded medicines with an\navailable generic equivalent are covered at 60 per cent. Branded medicines are covered at 80 per\ncent whether or not a generic equivalent exists.",
+        "citations": [
+          "plan-essential::0002",
+          "plan-premier::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.3065000055357814,
+      "generation_ms": 0.47060000360943377
+    },
+    {
+      "qid": "q008",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 6.411545753479004
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 5.817668914794922
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 5.564363956451416
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 5.235803127288818
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.6812191009521484
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.6431775093078613
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.332334041595459
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.969425678253174
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.413329839706421
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2635741233825684
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.2158427238464355
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.066049098968506
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.601332187652588
+          }
+        ]
+      },
+      "answer": {
+        "text": "Physiotherapy is limited to sixty sessions per policy\nyear under the Premier plan. The Premier plan covers two routine dental examinations and two cleanings per\npolicy year at 100 per cent. Restorative dental work, including fillings,\ncrowns and root canal treatment, is covered at 60 per cent up to 30,000 units\nper policy year.",
+        "citations": [
+          "plan-premier::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5117999971844256,
+      "generation_ms": 0.29620001441799104
+    },
+    {
+      "qid": "q009",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 8.664311408996582
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 6.42292594909668
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 5.664456367492676
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 4.769772052764893
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 4.503612041473389
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 4.235304832458496
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 3.928765296936035
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.1269102096557617
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.6929283142089844
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.3647677898406982
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.8176465034484863
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.7823238372802734
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 1.615317940711975
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Upgrades between plans A member upgrading from the Essential plan to the Premier plan serves a fresh\nwaiting period only for benefits that the Essential plan did not provide. For a\nbenefit that both plans provide at different levels, the member is covered at\nthe Essential level until the Premier waiting period for that benefit has been\nserved, and at the Premier level thereafter.",
+        "citations": [
+          "waiting-periods::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.34509997931309044,
+      "generation_ms": 0.25159999495372176
+    },
+    {
+      "qid": "q010",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 7.79805326461792
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 5.767752647399902
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 5.650834083557129
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 5.465670585632324
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 5.350139617919922
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 4.995755195617676
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 4.835886001586914
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.6840946674346924
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 3.363436222076416
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.146352767944336
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 2.968815565109253
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.8791921138763428
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.7953758239746094
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.4861528873443604
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Aurora Premier Plan — Schedule of Benefits The annual out-of-pocket maximum under the Premier plan is 18,000 units\nper person. A single accompanying\nparent or guardian of an insured child under the age of fourteen is covered for\nbed and board for the duration of the admission, to a maximum of 1,200 units per\nnight.",
+        "citations": [
+          "plan-premier::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 2.406000014161691,
+      "generation_ms": 0.6322000117506832
+    },
+    {
+      "qid": "q011",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 10.780464172363281
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 5.160961627960205
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.460561752319336
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.10703182220459
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.8458547592163086
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 3.1734063625335693
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 3.083989143371582
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.9626331329345703
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.857450246810913
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.8028604984283447
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.782168388366699
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 2.461135149002075
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.1140382289886475
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.9302220344543457
+          }
+        ]
+      },
+      "answer": {
+        "text": "Emergency treatment outside the country of residence is covered at\n90 per cent for the first ninety days of any single trip, after which cover\nceases for that trip regardless of the member's reason for remaining abroad. A charge for medically necessary treatment that is covered by the member's plan,\nis not excluded, is incurred after any applicable waiting period, and does not\nexceed the allowed amount. A condition that a reasonable person would regard as able to wait for a\nscheduled appointment is not an emergency, regardless of how the member\nperceived it at the time.",
+        "citations": [
+          "plan-premier::0002",
+          "definitions::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.3793999785557389,
+      "generation_ms": 0.46350000775419176
+    },
+    {
+      "qid": "q012",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 9.97584342956543
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 8.939814567565918
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 4.658268928527832
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.494322299957275
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.383791923522949
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.033188819885254
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 4.010309219360352
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.651853084564209
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 3.1689820289611816
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.9965224266052246
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.804060459136963
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.3925542831420898
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.1744446754455566
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 0.9105633497238159
+          }
+        ]
+      },
+      "answer": {
+        "text": "Generic medicines are covered in full. Generic medicines are covered at 90 per cent. Branded medicines with an\navailable generic equivalent are covered at 60 per cent.",
+        "citations": [
+          "plan-premier::0001",
+          "plan-essential::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.27630000840872526,
+      "generation_ms": 0.4605000140145421
+    },
+    {
+      "qid": "q013",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 14.153274536132812
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 10.333752632141113
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 7.443411827087402
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 5.025503158569336
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.213609218597412
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.3482210636138916
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 0.8759867548942566
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 0.697348952293396
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 0.685369074344635
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 0.6700218319892883
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 0.6521725058555603
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 0.648638129234314
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.5605403184890747
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 0.4914851784706116
+          }
+        ]
+      },
+      "answer": {
+        "text": "Cosmetic surgery and any treatment undertaken principally to alter\n   appearance, unless it is reconstructive surgery following an accident or a\n   covered surgical procedure and is begun within twenty-four months of that\n   accident or procedure.",
+        "citations": [
+          "exclusions::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.9932000141125172,
+      "generation_ms": 0.3108000091742724
+    },
+    {
+      "qid": "q014",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 10.08467960357666
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.99009370803833
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 0.9289261102676392
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 0.9288836717605591
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 0.922053337097168
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 0.9105633497238159
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 0.8833988904953003
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 0.8131032586097717
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.8081218004226685
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 0.8009840846061707
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 0.7941887378692627
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 0.7866536378860474
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 0.7295036911964417
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 0.6430947780609131
+          }
+        ]
+      },
+      "answer": {
+        "text": "Cosmetic surgery and any treatment undertaken principally to alter\n   appearance, unless it is reconstructive surgery following an accident or a\n   covered surgical procedure and is begun within twenty-four months of that\n   accident or procedure. Treatment of injuries sustained while taking part in professional sport, or\n   while participating in motor racing of any kind. Self-inflicted injury, except where the treating clinician certifies that the\n   injury arose from a diagnosed psychiatric condition for which the member was\n   under active care at the time.",
+        "citations": [
+          "exclusions::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.0952999873552471,
+      "generation_ms": 0.3121000190731138
+    },
+    {
+      "qid": "q015",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0000",
+            "score": 3.7665843963623047
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.6878702640533447
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.6720759868621826
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 2.5921459197998047
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.5627527236938477
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.5619871616363525
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.2333476543426514
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.9119679927825928
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 1.7882840633392334
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.3456694781780243
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.33214694261550903
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.3211539089679718
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 0.3166622519493103
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.31229451298713684
+          }
+        ]
+      },
+      "answer": {
+        "text": "A member may appeal a declined claim or a declined pre-authorisation within\nninety days of the date of the decision letter. An appeal is reviewed by a clinician who was not involved in the original\ndecision. The Board includes at least one clinician who is not an employee\nof Aurora.",
+        "citations": [
+          "appeals::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.6004000024404377,
+      "generation_ms": 0.6661999796051532
+    },
+    {
+      "qid": "q016",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 6.273923873901367
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 5.840370178222656
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.170276641845703
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 3.8271467685699463
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.6449098587036133
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 3.4578800201416016
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.4211835861206055
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.370786666870117
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 3.3700461387634277
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.301647186279297
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 3.083519458770752
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.985323429107666
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.980307102203369
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.6569738388061523
+          }
+        ]
+      },
+      "answer": {
+        "text": "A waiting period runs from the member's cover start date. Treatment received\nduring a waiting period is not covered, even where the claim is submitted after\nthe period has ended. Any condition for which the member received treatment, took prescribed\nmedication, or was given a diagnosis in the thirty-six months before the cover\nstart date.",
+        "citations": [
+          "waiting-periods::0000",
+          "definitions::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.3795999984722584,
+      "generation_ms": 0.47729999641887844
+    },
+    {
+      "qid": "q017",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 7.520920753479004
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 6.978085517883301
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 5.0700201988220215
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.5209779739379883
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 3.128596782684326
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.397265672683716
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 2.3700854778289795
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.1297411918640137
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.5803768634796143
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 1.5086731910705566
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 1.494025468826294
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.453845500946045
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.2840604782104492
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 1.2153464555740356
+          }
+        ]
+      },
+      "answer": {
+        "text": "where the treating clinician certifies that the\n   injury arose from a diagnosed psychiatric condition for which the member was\n   under active care at the time. Weight management treatment is excluded unless the member has a body mass\n   index of 35 or above and has completed a documented six-month supervised\n   programme, in which case bariatric surgery is covered at the plan's standard\n   inpatient rate. Treatment of a pre-existing condition is excluded during",
+        "citations": [
+          "exclusions::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5223000189289451,
+      "generation_ms": 0.3141000051982701
+    },
+    {
+      "qid": "q018",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 11.10708999633789
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 7.300544738769531
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 6.630445957183838
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 4.045400142669678
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 3.4849066734313965
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 3.2400596141815186
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.204926013946533
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.1880745887756348
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.1490747928619385
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.0913918018341064
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.0324840545654297
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 0.37116968631744385
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.3456694781780243
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.3211539089679718
+          }
+        ]
+      },
+      "answer": {
+        "text": "A claim found to be fraudulent is declined in full. Aurora may in addition\ncancel the policy from the date the fraudulent claim was submitted, in which\ncase benefits already paid in respect of that claim become repayable. Claims\nunrelated to the fraud that were settled before that date are not reopened.",
+        "citations": [
+          "exclusions::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.3603000077418983,
+      "generation_ms": 0.24380002287216485
+    },
+    {
+      "qid": "q019",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0000",
+            "score": 5.04276704788208
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 4.564745903015137
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.630418300628662
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.3559699058532715
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.1229629516601562
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.7151190042495728
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 1.5595970153808594
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 1.5321953296661377
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 1.4721390008926392
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 1.4223687648773193
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 0.9973759055137634
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 0.8859236240386963
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 0.688119113445282
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 0.6504574418067932
+          }
+        ]
+      },
+      "answer": {
+        "text": "A member must notify Aurora of an inpatient admission within forty-eight hours\nof the admission, or as soon as reasonably practicable where the member was\nincapacitated. Failure to notify within the required period does not by itself\nvoid the claim, but Aurora may reduce the settlement by 10 per cent of the\neligible amount where late notification has prevented it from managing the cost\nof the episode. Every claim must include the completed claim form, the itemised invoice showing\nthe procedure codes applied, and the discharge summary where the claim relates\nto an inpatient admission.",
+        "citations": [
+          "claims::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.26359999901615083,
+      "generation_ms": 0.2518999972380698
+    },
+    {
+      "qid": "q020",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0000",
+            "score": 4.670429229736328
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.6653730869293213
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.5597760677337646
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.4561967849731445
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 3.243324041366577
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 2.7418644428253174
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.3059635162353516
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.1330597400665283
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.1255390644073486
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 2.022700071334839
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.7861032485961914
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.394214153289795
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.3866583108901978
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.2516337633132935
+          }
+        ]
+      },
+      "answer": {
+        "text": "Tier One hospitals have agreed tariffs with\nAurora and support direct settlement. Tier Two hospitals have agreed tariffs but\ndo not support direct settlement, so the member pays and claims reimbursement at\nthe in-network coinsurance rate. At admission the member presents the membership card\nand the authorisation reference.",
+        "citations": [
+          "network::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.9509999945294112,
+      "generation_ms": 0.2434000198263675
+    },
+    {
+      "qid": "q021",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0001",
+            "score": 11.990853309631348
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 8.454051971435547
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 5.663153171539307
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 4.9569196701049805
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 4.152736663818359
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 3.939974784851074
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.873048782348633
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 3.0872302055358887
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.758923292160034
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.725618839263916
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 2.022700071334839
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.783112645149231
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.763505220413208
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.673370599746704
+          }
+        ]
+      },
+      "answer": {
+        "text": "Every claim must include the completed claim form, the itemised invoice showing\nthe procedure codes applied, and the discharge summary where the claim relates\nto an inpatient admission. An invoice that states only a total amount\nwithout itemisation will be returned to the member rather than declined, and the\nsubmission deadline is suspended from the date Aurora returns the invoice until\nthe date the member resubmits it. Where treatment is received at a network hospital under a valid\npre-authorisation, Aurora settles the hospital directly and the member pays only\nthe deductible and coinsurance",
+        "citations": [
+          "claims::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.1709000100381672,
+      "generation_ms": 0.46889999066479504
+    },
+    {
+      "qid": "q022",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0001",
+            "score": 7.769189834594727
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 4.8757853507995605
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 3.8765218257904053
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.7712185382843018
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.8791921138763428
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.7301406860351562
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.457629680633545
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 2.258244752883911
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.076273202896118
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 2.022700071334839
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.6245601177215576
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 1.5374362468719482
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 1.5321953296661377
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 0.5758543610572815
+          }
+        ]
+      },
+      "answer": {
+        "text": "Aurora acknowledges receipt of a claim within five working days. A complete\nclaim is settled within thirty days of receipt. Where Aurora requests further\ninformation, the thirty-day period restarts on the date the last outstanding\nitem is received.",
+        "citations": [
+          "claims::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5556000105571002,
+      "generation_ms": 0.2531000063754618
+    },
+    {
+      "qid": "q023",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0001",
+            "score": 7.836857795715332
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 6.0943732261657715
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 5.037508010864258
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 4.590963840484619
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 3.555159091949463
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.1710052490234375
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.8091471195220947
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 2.4599409103393555
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.6097773313522339
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.601053237915039
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.515202522277832
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.3795509338378906
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 1.3593428134918213
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 1.3397305011749268
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Settlement timetable ## Direct settlement and reimbursement Where treatment is received at a network hospital under a valid\npre-authorisation, Aurora settles the hospital directly and the member pays only\nthe deductible and coinsurance",
+        "citations": [
+          "claims::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.28279999969527125,
+      "generation_ms": 0.2940000267699361
+    },
+    {
+      "qid": "q024",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0002",
+            "score": 7.289628505706787
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 4.133395671844482
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.3584508895874023
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.186344623565674
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.1588125228881836
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 3.132631778717041
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 3.1249279975891113
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.9716808795928955
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 2.924360752105713
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.0462586879730225
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 1.9982595443725586
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.9302220344543457
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.5612975358963013
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 1.4050209522247314
+          }
+        ]
+      },
+      "answer": {
+        "text": "at a rate of 6 per cent per annum calculated from the\nsixty-first day. Where the invoice is issued\nin another currency, Aurora applies the exchange rate published by the central\nbank of the policy currency on the date of treatment, not the date of payment.",
+        "citations": [
+          "claims::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.2373000024817884,
+      "generation_ms": 0.19200000679120421
+    },
+    {
+      "qid": "q025",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "claims::0002",
+            "score": 7.597756862640381
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 7.445830345153809
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 6.099116325378418
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 5.419394493103027
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 5.142876625061035
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 4.400943279266357
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 4.377092361450195
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 3.670703887939453
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.6653730869293213
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 3.445664644241333
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.9007458686828613
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.817095994949341
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.253422975540161
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.098019599914551
+          }
+        ]
+      },
+      "answer": {
+        "text": "In all other cases the member pays\nthe provider and claims reimbursement. Where an insured person holds other insurance covering the same expense, Aurora\npays its proportionate share based on the ratio of its own annual benefit\nmaximum to the combined annual maxima of all policies in force. The member must\ndisclose other cover at the time of claim.",
+        "citations": [
+          "claims::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.2851999888662249,
+      "generation_ms": 0.21619998733513057
+    },
+    {
+      "qid": "q026",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.8124756813049316
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.371650457382202
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.6289212703704834
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.6181700229644775
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.476383686065674
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.6915761232376099
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 1.3415628671646118
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.1395865678787231
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.050236463546753
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.0445448160171509
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.9026751518249512
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.8622902631759644
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 0.8361058235168457
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.7693557143211365
+          }
+        ]
+      },
+      "answer": {
+        "text": "## When pre-authorisation is required - magnetic resonance imaging, computed tomography and positron emission\n  tomography scans; Pre-authorisation is not required for emergency treatment.",
+        "citations": [
+          "preauthorisation::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.21489999582991,
+      "generation_ms": 0.3012999950442463
+    },
+    {
+      "qid": "q027",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 6.3837690353393555
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 5.210675239562988
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 4.04182243347168
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 4.019917964935303
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 3.341876983642578
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 3.231340169906616
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.0726516246795654
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.9788711071014404
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.8328206539154053
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.7978334426879883
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.7412467002868652
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.6521809101104736
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.5753469467163086
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.429661512374878
+          }
+        ]
+      },
+      "answer": {
+        "text": "## When pre-authorisation is required - any single course of treatment whose estimated cost exceeds 50,000 units. Pre-authorisation is not required for emergency treatment.",
+        "citations": [
+          "preauthorisation::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 2.052900003036484,
+      "generation_ms": 0.2776999899651855
+    },
+    {
+      "qid": "q028",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 9.894548416137695
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 8.47028923034668
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 6.111273288726807
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 3.4606876373291016
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.344219207763672
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.0115914344787598
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.6600136756896973
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.2495205402374268
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.043194055557251
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.515202522277832
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 1.487013339996338
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.484607219696045
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 1.3801589012145996
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.3795509338378906
+          }
+        ]
+      },
+      "answer": {
+        "text": "## When pre-authorisation is required ## How to request it Aurora responds to a complete request within\nthree working days, or within twenty-four hours where the physician marks the\nrequest as urgent.",
+        "citations": [
+          "preauthorisation::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.26870000874623656,
+      "generation_ms": 0.24870000197552145
+    },
+    {
+      "qid": "q029",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 7.9618072509765625
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 3.990532159805298
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 3.613142490386963
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 3.5393552780151367
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.344219207763672
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.3342814445495605
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 2.185792922973633
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.1338062286376953
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.0827009677886963
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.5601176023483276
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.1395865678787231
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.9026751518249512
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 0.8719058632850647
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 0.864745020866394
+          }
+        ]
+      },
+      "answer": {
+        "text": "## When pre-authorisation is required ## How to request it An approval is valid for ninety days from the date of issue.",
+        "citations": [
+          "preauthorisation::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.2948999754153192,
+      "generation_ms": 0.3656999906525016
+    },
+    {
+      "qid": "q030",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 9.12384033203125
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 5.756380081176758
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 4.1339569091796875
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.616171360015869
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.9406495094299316
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.1567792892456055
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.10491681098938
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.059807538986206
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 1.7512017488479614
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.673370599746704
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.4941822290420532
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.4860845804214478
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.429175615310669
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 1.1078368425369263
+          }
+        ]
+      },
+      "answer": {
+        "text": "An approval states a maximum authorised amount; where the final cost\nexceeds that amount by more than 15 per cent, the excess requires a separate\nrequest and may be declined. Where pre-authorisation was required and was not obtained, Aurora reduces the\neligible amount by 30 per cent before applying the deductible and coinsurance.",
+        "citations": [
+          "preauthorisation::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 2.368799992837012,
+      "generation_ms": 0.6418999982997775
+    },
+    {
+      "qid": "q031",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 8.394804954528809
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.95939302444458
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.0035388469696045
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.9551920890808105
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.1395865678787231
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.050236463546753
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.0445448160171509
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.9026751518249512
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.8622902631759644
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 0.8361058235168457
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 0.7914710640907288
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 0.7882342338562012
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.7693557143211365
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 0.7426747679710388
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Penalty for proceeding without approval Where pre-authorisation was required and was not obtained, Aurora reduces the\neligible amount by 30 per cent before applying the deductible and coinsurance. The penalty is\nwaived where the member can show that the treating physician confirmed in\nwriting that the procedure was not one requiring pre-authorisation.",
+        "citations": [
+          "preauthorisation::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.374099996406585,
+      "generation_ms": 0.3352000203449279
+    },
+    {
+      "qid": "q032",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 9.789135932922363
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 7.40981388092041
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 7.3424177169799805
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 6.929676055908203
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 6.637892723083496
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 5.851568222045898
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 5.489097595214844
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 5.252634525299072
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 4.91819429397583
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 3.982783317565918
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.6121087074279785
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.0035388469696045
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.9995529651641846
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.3076961040496826
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Penalty for proceeding without approval The penalty is\nwaived where the member can show that the treating physician confirmed in\nwriting that the procedure was not one requiring pre-authorisation. A reduction under this section is applied once per episode of care, not once per\ninvoice arising from that episode.",
+        "citations": [
+          "preauthorisation::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5651999963447452,
+      "generation_ms": 0.5063999851699919
+    },
+    {
+      "qid": "q033",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 4.8753132820129395
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 4.463343620300293
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 4.047082424163818
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.004469394683838
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.7257676124572754
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.534820318222046
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.4834158420562744
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.3154635429382324
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.2435388565063477
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.1259119510650635
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.0409820079803467
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 2.0338101387023926
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.8220304250717163
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.7650319337844849
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Declined requests Proceeding with treatment\nafter a request has been declined means the full cost is borne by the member; A member may appeal a declined claim or a declined pre-authorisation within\nninety days of the date of the decision letter.",
+        "citations": [
+          "preauthorisation::0002",
+          "appeals::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 19.274699996458367,
+      "generation_ms": 0.7049000123515725
+    },
+    {
+      "qid": "q034",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0002",
+            "score": 6.661163330078125
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 6.23749303817749
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 5.568570137023926
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 5.198228359222412
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 5.141176223754883
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 4.561639785766602
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.727776527404785
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 3.6372413635253906
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.229102611541748
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.0324153900146484
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.9726643562316895
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 1.0989570617675781
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.0307453870773315
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 0.7850236892700195
+          }
+        ]
+      },
+      "answer": {
+        "text": "without interruption and no waiting period applies. Congenital\nconditions diagnosed during the automatic thirty-day period are covered, and are\nnot treated as pre-existing conditions when the child is added to the policy. | Benefit | Waiting period |\n| --- | --- |\n| Accident and emergency treatment | none |\n| General illness | thirty days |\n| Pre-existing conditions | twenty-four months |\n| Specified surgical procedures | twelve months |\n| Maternity | ten months |\n| Routine dental and vision | six months |\n| Psychiatric treatment | ninety days |",
+        "citations": [
+          "maternity::0002",
+          "waiting-periods::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.3714999766089022,
+      "generation_ms": 0.4634000069927424
+    },
+    {
+      "qid": "q035",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 11.035820960998535
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 6.43380069732666
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 5.825866222381592
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 4.641012668609619
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 4.407013893127441
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.2814061641693115
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 3.2522175312042236
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 3.04598331451416
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.7556939125061035
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.233722448348999
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.189140558242798
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.078507900238037
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.0767247676849365
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 1.9153335094451904
+          }
+        ]
+      },
+      "answer": {
+        "text": "| Benefit | Waiting period |\n| --- | --- |\n| Accident and emergency treatment | none |\n| General illness | thirty days |\n| Pre-existing conditions | twenty-four months |\n| Specified surgical procedures | twelve months |\n| Maternity | ten months |\n| Routine dental and vision | six months |\n| Psychiatric treatment | ninety days | Specified surgical procedures are hernia repair, cataract extraction, joint\nreplacement, tonsillectomy and the surgical treatment of haemorrhoids.",
+        "citations": [
+          "waiting-periods::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 6.336999998893589,
+      "generation_ms": 0.28279999969527125
+    },
+    {
+      "qid": "q036",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 14.199779510498047
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 11.963250160217285
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 8.044322967529297
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 5.518026351928711
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 5.1811676025390625
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 4.176892280578613
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.909316301345825
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.8630504608154297
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 3.777348279953003
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 3.6372413635253906
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.5804460048675537
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.21781587600708
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.2168569564819336
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.814055919647217
+          }
+        ]
+      },
+      "answer": {
+        "text": "A waiting period runs from the member's cover start date. A member transferring to Aurora from another insurer without a break in cover of\nmore than thirty days receives credit for time already served under the previous\npolicy, up to the full length of the Aurora waiting period. Credit is granted\nonly for benefits the previous policy also covered.",
+        "citations": [
+          "waiting-periods::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 10.131500021088868,
+      "generation_ms": 0.38399998447857797
+    },
+    {
+      "qid": "q037",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 13.557225227355957
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 7.368607044219971
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 6.840959072113037
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 5.81986665725708
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 5.54265832901001
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 5.145669937133789
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 4.819943428039551
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 4.164785861968994
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 4.008411407470703
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 3.1734063625335693
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.728224039077759
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 2.461135149002075
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 2.164822578430176
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.1082496643066406
+          }
+        ]
+      },
+      "answer": {
+        "text": "A member upgrading from the Essential plan to the Premier plan serves a fresh\nwaiting period only for benefits that the Essential plan did not provide. For a\nbenefit that both plans provide at different levels, the member is covered at\nthe Essential level until the Premier waiting period for that benefit has been\nserved, and at the Premier level thereafter. Where cover lapses for non-payment and is reinstated within forty-five days, no\nnew waiting period applies and cover is treated as continuous, but treatment\nreceived during the lapsed interval is never covered.",
+        "citations": [
+          "waiting-periods::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 11.076900002080947,
+      "generation_ms": 0.4918999911751598
+    },
+    {
+      "qid": "q038",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 10.40998649597168
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 8.556827545166016
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 5.110245227813721
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.628523349761963
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 3.5915420055389404
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.50451397895813
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.4961118698120117
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.4091131687164307
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 3.28830623626709
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.124396800994873
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.9382474422454834
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.7476043701171875
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 1.548785924911499
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 1.522638201713562
+          }
+        ]
+      },
+      "answer": {
+        "text": "Where cover lapses for non-payment and is reinstated within forty-five days, no\nnew waiting period applies and cover is treated as continuous, but treatment\nreceived during the lapsed interval is never covered. Where reinstatement occurs\nafter forty-five days, every waiting period restarts in full. Where reinstatement occurs\nafter forty-five days, every waiting period restarts in full.",
+        "citations": [
+          "waiting-periods::0001",
+          "waiting-periods::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 7.054499990772456,
+      "generation_ms": 0.6521999894175678
+    },
+    {
+      "qid": "q039",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 6.115952491760254
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 5.513884544372559
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 4.822962760925293
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.797387599945068
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 3.7398486137390137
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.8330745697021484
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.814055919647217
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.8682477474212646
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.837306022644043
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.0307453870773315
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 0.7850236892700195
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 0.7755472660064697
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.7724391222000122
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.7693557143211365
+          }
+        ]
+      },
+      "answer": {
+        "text": "Where reinstatement occurs\nafter forty-five days, every waiting period restarts in full. A child added after thirty days is subject to the standard waiting\nperiods applicable to a new member. A child born to an insured member is covered from birth with no waiting period,\nprovided the",
+        "citations": [
+          "waiting-periods::0002",
+          "waiting-periods::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.2927999885287136,
+      "generation_ms": 0.34550001146271825
+    },
+    {
+      "qid": "q040",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0000",
+            "score": 15.439399719238281
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 11.489075660705566
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 4.45343017578125
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 3.541362762451172
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 3.02876615524292
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.9050934314727783
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.8235554695129395
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.678257942199707
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 2.1067824363708496
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 1.943589210510254
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 0.8555076122283936
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.8358975648880005
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.8192327618598938
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.7344667315483093
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Provider Network and Cashless Treatment ## Cashless treatment Cashless treatment is available only at a Tier One hospital and only with a\nvalid pre-authorisation.",
+        "citations": [
+          "network::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.8335000020451844,
+      "generation_ms": 0.32029999420046806
+    },
+    {
+      "qid": "q041",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0000",
+            "score": 22.353424072265625
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 9.441600799560547
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 7.210679531097412
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 6.279253959655762
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 5.039327621459961
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 4.6499199867248535
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 4.372467041015625
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 4.215311527252197
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 4.085895538330078
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 3.8106205463409424
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.4914443492889404
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 3.368983745574951
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 3.094761371612549
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.6470911502838135
+          }
+        ]
+      },
+      "answer": {
+        "text": "## The allowed amount For an out-of-network provider the allowed amount is the lesser of the invoiced\ncharge and the median Tier One tariff for the same procedure code in the same\nregion. Where no Tier One tariff exists for the procedure code, the allowed\namount is the invoiced charge reduced by 25 per cent.",
+        "citations": [
+          "network::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.308599992422387,
+      "generation_ms": 0.3079000161960721
+    },
+    {
+      "qid": "q042",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0001",
+            "score": 10.658918380737305
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 8.394633293151855
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 8.271196365356445
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 7.381017684936523
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 5.599241733551025
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 5.217037200927734
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 4.274372100830078
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 4.22559118270874
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 3.6326589584350586
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.298781156539917
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 2.0498013496398926
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 1.58561110496521
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 1.242132306098938
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.1341285705566406
+          }
+        ]
+      },
+      "answer": {
+        "text": "## Emergency admission to a non-network hospital An emergency admission to any hospital is reimbursed at the in-network rate for\nthe first seventy-two hours. The cost of a medically necessary transfer between hospitals is covered in full\nunder the Emergency Transport benefit and does not count toward the annual\nbenefit maximum.",
+        "citations": [
+          "network::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.30980000155977905,
+      "generation_ms": 0.3453000099398196
+    },
+    {
+      "qid": "q043",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0002",
+            "score": 8.13938045501709
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 7.409210681915283
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 7.135320663452148
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 3.6326589584350586
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.307840347290039
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.7417917251586914
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.3014051914215088
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 1.1604506969451904
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 0.0
+          }
+        ]
+      },
+      "answer": {
+        "text": "Aurora may remove a hospital from the network at any time. Where a member has a\nvalid pre-authorisation for treatment at a hospital that is subsequently removed\nfrom the network, the authorisation remains honoured at the in-network rate for\nninety days after the removal takes effect. At admission the member presents the membership card\nand the authorisation reference.",
+        "citations": [
+          "network::0002",
+          "network::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.30949999927543104,
+      "generation_ms": 0.4360000020824373
+    },
+    {
+      "qid": "q044",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0000",
+            "score": 9.452957153320312
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 5.263193130493164
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 5.065649509429932
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 4.032244682312012
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.691005229949951
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 3.624220371246338
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 3.3517165184020996
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 3.1850032806396484
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.969425678253174
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.3055946826934814
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 1.9568543434143066
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 1.6040483713150024
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.601332187652588
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Maternity and Newborn Cover Maternity cover is provided under the Premier plan only. The Essential plan\ncovers complications of pregnancy as a general illness but does not cover\nroutine antenatal care or an uncomplicated delivery.",
+        "citations": [
+          "maternity::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.28810001094825566,
+      "generation_ms": 0.30929999775253236
+    },
+    {
+      "qid": "q045",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0000",
+            "score": 17.636646270751953
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 6.242048740386963
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 6.15677547454834
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.727776527404785
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 3.6372413635253906
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.8330745697021484
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.814055919647217
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.8682477474212646
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.837306022644043
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.0307453870773315
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 0.7850236892700195
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 0.7755472660064697
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.7724391222000122
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.7693557143211365
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Maternity and Newborn Cover Maternity benefits are available after the ten-month maternity waiting period\ndescribed in the Waiting Periods document. The waiting period is measured to the\ndate of delivery, not to the date of conception or the date of the first\nantenatal appointment.",
+        "citations": [
+          "maternity::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 19.957499986048788,
+      "generation_ms": 0.48129999777302146
+    },
+    {
+      "qid": "q046",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0000",
+            "score": 11.870552062988281
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 8.24072265625
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 5.478905200958252
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 4.026594161987305
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.0923733711242676
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.5592823028564453
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.4370999336242676
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.3488495349884033
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.2131428718566895
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.0780324935913086
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.944677710533142
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.2218955755233765
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 1.2218955755233765
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 1.2023075819015503
+          }
+        ]
+      },
+      "answer": {
+        "text": "Two routine ultrasound scans per pregnancy\nare covered, and further scans are covered where clinically indicated and\ndocumented. An elective\ncaesarean section requested without clinical indication is covered up to the\nsame 180,000 units, with any excess borne by the member. A medically indicated\ncaesarean section is covered up to 320,000 units.",
+        "citations": [
+          "maternity::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 4.325199988670647,
+      "generation_ms": 0.39209998794831336
+    },
+    {
+      "qid": "q047",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0001",
+            "score": 15.12668514251709
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 8.045388221740723
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 4.320504665374756
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.987863540649414
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.873525619506836
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.742504119873047
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.377490758895874
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.0978879928588867
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 2.0830435752868652
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 1.7581822872161865
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.6347013711929321
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 1.527475357055664
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 1.4373596906661987
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 1.4050209522247314
+          }
+        ]
+      },
+      "answer": {
+        "text": "A medically indicated\ncaesarean section is covered up to 320,000 units. Complications of pregnancy and of delivery are covered under the member's\ninpatient benefit and are not subject to the delivery limits above. For the\navoidance of doubt, a caesarean section performed in response to an emergent\ncomplication during labour is treated as a complication and not as a delivery.",
+        "citations": [
+          "maternity::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.359199988655746,
+      "generation_ms": 0.395399983972311
+    },
+    {
+      "qid": "q048",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "maternity::0001",
+            "score": 8.904611587524414
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 6.090157508850098
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 4.333972930908203
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 4.3251237869262695
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.219986915588379
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 4.156047821044922
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.894218683242798
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.631563425064087
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.5237536430358887
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 3.461625099182129
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.572071075439453
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.5264158248901367
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.490682601928711
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.490159749984741
+          }
+        ]
+      },
+      "answer": {
+        "text": "A newborn child is covered from birth for thirty days under the mother's policy\nwithout a separate premium, whether or not the child is subsequently added to\nthe policy. This automatic cover is limited to 150,000 units. Where the child is added to the policy within thirty days of birth, cover\ncontinues without interruption and no waiting period applies.",
+        "citations": [
+          "maternity::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.3787999923806638,
+      "generation_ms": 0.4754000110551715
+    },
+    {
+      "qid": "q049",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 0.9289261102676392
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 0.9288836717605591
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 0.922053337097168
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 0.9105633497238159
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 0.8833988904953003
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 0.8131032586097717
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 0.8081218004226685
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 0.8009840846061707
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 0.7941887378692627
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 0.7866536378860474
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 0.7295036911964417
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 0.6430947780609131
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 0.6317547559738159
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 0.5856640338897705
+          }
+        ]
+      },
+      "answer": {
+        "text": "Generic medicines are covered at 90 per cent. Restorative dental work is not covered under the\nEssential plan. spectacles and contact lenses are not covered.",
+        "citations": [
+          "plan-essential::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 10.557200002949685,
+      "generation_ms": 0.4875000158790499
+    },
+    {
+      "qid": "q050",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0000",
+            "score": 7.85099983215332
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 6.748355865478516
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 6.538010597229004
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 6.272167205810547
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 4.694901466369629
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 4.670429229736328
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.775531768798828
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.7517471313476562
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 3.6653730869293213
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 3.563220262527466
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.5597760677337646
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.4561967849731445
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.1255390644073486
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.7861032485961914
+          }
+        ]
+      },
+      "answer": {
+        "text": "A member may appeal a declined claim or a declined pre-authorisation within\nninety days of the date of the decision letter. ## Declined requests Proceeding with treatment\nafter a request has been declined means the full cost is borne by the member;",
+        "citations": [
+          "appeals::0000",
+          "preauthorisation::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 20.169600000372157,
+      "generation_ms": 0.6957000005058944
+    },
+    {
+      "qid": "q051",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0000",
+            "score": 8.821094512939453
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 8.31052017211914
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.871469497680664
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 4.249466896057129
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 4.110187530517578
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.1748299598693848
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 2.773017406463623
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.330869674682617
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.8441190719604492
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 1.6496074199676514
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.632910966873169
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 1.6296039819717407
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 1.5857102870941162
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.3509180545806885
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Appeals and Grievances For\nan appeal against a declined pre-authorisation where treatment is time\nsensitive, Aurora responds within seventy-two hours. After the internal process is exhausted, or where Aurora has failed to respond\nwithin the time limits above, the member may refer the matter to the independent",
+        "citations": [
+          "appeals::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 18.606900004670024,
+      "generation_ms": 0.5454000202007592
+    },
+    {
+      "qid": "q052",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0001",
+            "score": 9.990470886230469
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 3.7325568199157715
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 2.670387029647827
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.0069193840026855
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 0.37116968631744385
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.3456694781780243
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.33214694261550903
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.3211539089679718
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 0.3166622519493103
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 0.3137369751930237
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.31229451298713684
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.3115782141685486
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 0.3115782141685486
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 0.3059642016887665
+          }
+        ]
+      },
+      "answer": {
+        "text": "Board responds within forty working days and its decision is\nfinal within Aurora's internal process. A referral must be made within six months of the\nfinal internal decision. The Ombudsman's determination is binding on Aurora and\nis not binding on the member.",
+        "citations": [
+          "appeals::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.46529999235644937,
+      "generation_ms": 0.41959999362006783
+    },
+    {
+      "qid": "q053",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0001",
+            "score": 10.322454452514648
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 8.836407661437988
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 8.160435676574707
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 5.566601753234863
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 1.8439528942108154
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 1.808876872062683
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.4539563655853271
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.1474668979644775
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.1412482261657715
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 0.9519501328468323
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 0.940270721912384
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 0.9364409446716309
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 0.9251366853713989
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.886589527130127
+          }
+        ]
+      },
+      "answer": {
+        "text": "A grievance\ndoes not pause any deadline that applies to a claim or an appeal. Submitting an internal appeal suspends the one-hundred-and-eighty-day claim\nsubmission deadline in respect of the claim under appeal. Submitting an internal appeal suspends the one-hundred-and-eighty-day claim\nsubmission deadline in respect of the claim under appeal.",
+        "citations": [
+          "appeals::0001",
+          "appeals::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.4343999898992479,
+      "generation_ms": 0.4873999860137701
+    },
+    {
+      "qid": "q054",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0001",
+            "score": 9.138084411621094
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 5.959238052368164
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 5.545732498168945
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 3.8820078372955322
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.7804934978485107
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.779212474822998
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.996248483657837
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 1.8439528942108154
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 1.808876872062683
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 1.4539563655853271
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.1474668979644775
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 0.9519501328468323
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 0.940270721912384
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 0.9251366853713989
+          }
+        ]
+      },
+      "answer": {
+        "text": "A grievance\ndoes not pause any deadline that applies to a claim or an appeal. ## Effect on deadlines deadline that applies to a claim or an appeal.",
+        "citations": [
+          "appeals::0001",
+          "appeals::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.39060000563040376,
+      "generation_ms": 0.48149999929592013
+    },
+    {
+      "qid": "q055",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "definitions::0000",
+            "score": 11.23112964630127
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 6.208280563354492
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 5.273815631866455
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 4.3243818283081055
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.928621292114258
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 3.779161214828491
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 3.526120662689209
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 3.2518372535705566
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 2.956268310546875
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 2.8567593097686768
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 2.6345486640930176
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.454763650894165
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 2.4315502643585205
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.42598819732666
+          }
+        ]
+      },
+      "answer": {
+        "text": "The maximum sum Aurora will treat as an eligible expense for a given procedure\ncode. A procedure requiring admission to a hospital or clinic for observation or\nrecovery, where the member is discharged on the same calendar day. An admission\nthat extends past midnight is an inpatient admission regardless of its planned\nduration.",
+        "citations": [
+          "definitions::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.3892999957315624,
+      "generation_ms": 0.5385999975260347
+    },
+    {
+      "qid": "q056",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "definitions::0001",
+            "score": 6.674200057983398
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 6.664202690124512
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 5.039912223815918
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 4.881024360656738
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 4.561639785766602
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 3.5718750953674316
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 3.120236873626709
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 3.0052895545959473
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.514909267425537
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.438687562942505
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.6097773313522339
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.601053237915039
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.515202522277832
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 1.487013339996338
+          }
+        ]
+      },
+      "answer": {
+        "text": "A condition that a reasonable person would regard as able to wait for a\nscheduled appointment is not an emergency, regardless of how the member\nperceived it at the time. ## Pre-existing condition Congenital\nconditions diagnosed during the automatic thirty-day period are covered, and are\nnot treated as pre-existing conditions when the child is added to the policy.",
+        "citations": [
+          "definitions::0001",
+          "maternity::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 8.26000000233762,
+      "generation_ms": 0.5812000017613173
+    },
+    {
+      "qid": "q057",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "definitions::0001",
+            "score": 6.240268230438232
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 5.224055767059326
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 4.3671875
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 4.125870704650879
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 3.5691585540771484
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 3.5110058784484863
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 3.3479466438293457
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.158191204071045
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.094740867614746
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.760958194732666
+          },
+          {
+            "chunk_id": "preauthorisation::0000",
+            "score": 2.574174165725708
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.4211738109588623
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.3090803623199463
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.2377853393554688
+          }
+        ]
+      },
+      "answer": {
+        "text": "A charge for medically necessary treatment that is covered by the member's plan,\nis not excluded, is incurred after any applicable waiting period, and does not\nexceed the allowed amount. ## Medically necessary A treatment may be medically necessary and still\nbe excluded.",
+        "citations": [
+          "definitions::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 1.2931000092066824,
+      "generation_ms": 0.6987999950069934
+    },
+    {
+      "qid": "q058",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 8.247249603271484
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 4.988410949707031
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 2.6772820949554443
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.377561330795288
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 2.2333476543426514
+          },
+          {
+            "chunk_id": "waiting-periods::0002",
+            "score": 2.2209761142730713
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 1.8526660203933716
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.600389838218689
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 0.0
+          }
+        ]
+      },
+      "answer": {
+        "text": "Cosmetic surgery and any treatment undertaken principally to alter\n   appearance, unless it is reconstructive surgery following an accident or a\n   covered surgical procedure and is begun within twenty-four months of that\n   accident or procedure. Experimental treatment, meaning any treatment that has not received\n   regulatory approval for the indication being treated in the member's country\n   of residence. Treatment of injuries sustained while taking part in professional sport, or\n   while participating in motor racing of any kind.",
+        "citations": [
+          "exclusions::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 7.557399978395551,
+      "generation_ms": 0.4641000123228878
+    },
+    {
+      "qid": "q059",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "definitions::0002",
+            "score": 7.539966106414795
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 6.5876240730285645
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 4.890883922576904
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 4.451355457305908
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.4098737239837646
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.851341724395752
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.734818935394287
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.2349960803985596
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.220736026763916
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 1.6244887113571167
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.5529676675796509
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.1061148643493652
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.0307453870773315
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.0223488807678223
+          }
+        ]
+      },
+      "answer": {
+        "text": "Benefit limits expressed per policy year reset on each\nanniversary and are not pro-rated where a member joins mid-year. Benefit limits expressed per policy year reset on each\nanniversary and are not pro-rated where a member joins mid-year.",
+        "citations": [
+          "definitions::0002",
+          "definitions::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5378999921958894,
+      "generation_ms": 1.0952999873552471
+    },
+    {
+      "qid": "q060",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0002",
+            "score": 13.390179634094238
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 12.404738426208496
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 6.053926944732666
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 5.831291198730469
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 5.014023780822754
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 4.966910362243652
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.910919666290283
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 3.3235151767730713
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.7715115547180176
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.7275078296661377
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.573164701461792
+          },
+          {
+            "chunk_id": "preauthorisation::0001",
+            "score": 2.2170934677124023
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.1103320121765137
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.9336456060409546
+          }
+        ]
+      },
+      "answer": {
+        "text": "The cost of a medically necessary transfer between hospitals is covered in full\nunder the Emergency Transport benefit and does not count toward the annual\nbenefit maximum. After seventy-two hours the member is expected to\ntransfer to a Tier One hospital where it is clinically safe to do so. The cost of a medically necessary transfer between hospitals is covered in full\nunder the Emergency Transport benefit and does not count toward the annual\nbenefit maximum.",
+        "citations": [
+          "network::0002",
+          "network::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5305999948177487,
+      "generation_ms": 0.6223000236786902
+    },
+    {
+      "qid": "u001",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 4.504619598388672
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 4.0198869705200195
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 3.7441439628601074
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 3.234011173248291
+          },
+          {
+            "chunk_id": "maternity::0002",
+            "score": 3.1269102096557617
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.1043050289154053
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 2.868269443511963
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.707540273666382
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 2.3872735500335693
+          },
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 1.551847219467163
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 1.3124016523361206
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 1.2704564332962036
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.2370712757110596
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.8489360213279724
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Aurora Premier Plan — Schedule of Benefits The Premier plan is an upgrade of the Essential plan. The annual out-of-pocket maximum under the Premier plan is 18,000 units\nper person.",
+        "citations": [
+          "plan-premier::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 10.810000007040799,
+      "generation_ms": 0.535300001502037
+    },
+    {
+      "qid": "u002",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 4.551359176635742
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 4.177120208740234
+          },
+          {
+            "chunk_id": "plan-premier::0001",
+            "score": 3.2540550231933594
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 2.5601515769958496
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2611594200134277
+          },
+          {
+            "chunk_id": "waiting-periods::0000",
+            "score": 2.1229629516601562
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.076273202896118
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 1.9206420183181763
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 1.8987857103347778
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 1.6097773313522339
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 1.6040483713150024
+          },
+          {
+            "chunk_id": "preauthorisation::0002",
+            "score": 1.601053237915039
+          },
+          {
+            "chunk_id": "appeals::0001",
+            "score": 1.515202522277832
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 1.487013339996338
+          }
+        ]
+      },
+      "answer": {
+        "text": "Physiotherapy is limited to twenty sessions per policy year under the Essential\nplan. Sessions delivered during an inpatient admission are not counted against\nthis limit. Vision cover is limited to one refraction test per policy year;",
+        "citations": [
+          "plan-essential::0002"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 11.583899991819635,
+      "generation_ms": 0.4175000067334622
+    },
+    {
+      "qid": "u003",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "network::0000",
+            "score": 13.305538177490234
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 9.34929084777832
+          },
+          {
+            "chunk_id": "network::0002",
+            "score": 2.944678783416748
+          },
+          {
+            "chunk_id": "plan-premier::0002",
+            "score": 2.810041904449463
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 2.4046151638031006
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.290497303009033
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 2.163447141647339
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 2.1103320121765137
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.078507900238037
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 1.9982595443725586
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 1.9153335094451904
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.4996592998504639
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.26305091381073
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 1.2218955755233765
+          }
+        ]
+      },
+      "answer": {
+        "text": "Tier One hospitals have agreed tariffs with\nAurora and support direct settlement. For an out-of-network provider the allowed amount is the lesser of the invoiced\ncharge and the median Tier One tariff for the same procedure code in the same\nregion. Cashless treatment is available only at a Tier One hospital and only with a\nvalid pre-authorisation.",
+        "citations": [
+          "network::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 9.762000001501292,
+      "generation_ms": 0.5316999740898609
+    },
+    {
+      "qid": "u004",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "appeals::0001",
+            "score": 5.280506134033203
+          },
+          {
+            "chunk_id": "appeals::0000",
+            "score": 2.3775501251220703
+          },
+          {
+            "chunk_id": "appeals::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "definitions::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "exclusions::0002",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 0.0
+          },
+          {
+            "chunk_id": "maternity::0001",
+            "score": 0.0
+          }
+        ]
+      },
+      "answer": {
+        "text": "Board responds within forty working days and its decision is\nfinal within Aurora's internal process. A complaint about service quality, waiting times or the conduct of Aurora staff\nis handled as a grievance rather than an appeal.",
+        "citations": [
+          "appeals::0001"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 0.5546000029426068,
+      "generation_ms": 0.48779998905956745
+    },
+    {
+      "qid": "u005",
+      "retrieval": {
+        "chunks": [
+          {
+            "chunk_id": "plan-essential::0000",
+            "score": 5.817668914794922
+          },
+          {
+            "chunk_id": "plan-essential::0001",
+            "score": 5.564363956451416
+          },
+          {
+            "chunk_id": "plan-premier::0000",
+            "score": 5.235803127288818
+          },
+          {
+            "chunk_id": "waiting-periods::0001",
+            "score": 3.6812191009521484
+          },
+          {
+            "chunk_id": "plan-essential::0002",
+            "score": 3.6431775093078613
+          },
+          {
+            "chunk_id": "maternity::0000",
+            "score": 3.332334041595459
+          },
+          {
+            "chunk_id": "exclusions::0001",
+            "score": 2.969425678253174
+          },
+          {
+            "chunk_id": "claims::0002",
+            "score": 2.413329839706421
+          },
+          {
+            "chunk_id": "exclusions::0000",
+            "score": 2.2635741233825684
+          },
+          {
+            "chunk_id": "network::0001",
+            "score": 2.2158427238464355
+          },
+          {
+            "chunk_id": "network::0000",
+            "score": 2.066049098968506
+          },
+          {
+            "chunk_id": "definitions::0001",
+            "score": 1.6282999515533447
+          },
+          {
+            "chunk_id": "definitions::0000",
+            "score": 1.601332187652588
+          },
+          {
+            "chunk_id": "claims::0001",
+            "score": 1.313345193862915
+          }
+        ]
+      },
+      "answer": {
+        "text": "# Aurora Essential Plan — Schedule of Benefits The Essential plan carries an annual benefit maximum of 500,000 units per\ninsured person per policy year. For out-of-network\nproviders Aurora pays 55 per cent of the allowed amount, and any balance billed\nabove the allowed amount is the member's responsibility and does not accrue\ntoward the out-of-pocket maximum.",
+        "citations": [
+          "plan-essential::0000"
+        ],
+        "abstained": false
+      },
+      "retrieval_ms": 3.5376999876461923,
+      "generation_ms": 0.5464999994728714
+    }
+  ],
+  "metrics": {
+    "abstention_correct": {
+      "name": "abstention_correct",
+      "value": 0.9230769230769231,
+      "ci_low": 0.8461538461538461,
+      "ci_high": 0.9846153846153847,
+      "n": 65
+    },
+    "answer_f1": {
+      "name": "answer_f1",
+      "value": 0.3700826938704658,
+      "ci_low": 0.32276841607019274,
+      "ci_high": 0.4185749095867461,
+      "n": 60
+    },
+    "chunks_in_budget": {
+      "name": "chunks_in_budget",
+      "value": 1.3166666666666667,
+      "ci_low": 1.2,
+      "ci_high": 1.4333333333333333,
+      "n": 60
+    },
+    "citation_precision": {
+      "name": "citation_precision",
+      "value": 0.7833333333333333,
+      "ci_low": 0.6833333333333333,
+      "ci_high": 0.875,
+      "n": 60
+    },
+    "citation_recall": {
+      "name": "citation_recall",
+      "value": 0.7666666666666665,
+      "ci_low": 0.6694444444444445,
+      "ci_high": 0.8584027777777775,
+      "n": 60
+    },
+    "evidence_coverage": {
+      "name": "evidence_coverage",
+      "value": 0.8332500409501856,
+      "ci_low": 0.7526207025036318,
+      "ci_high": 0.9043618252483382,
+      "n": 60
+    },
+    "exact_match": {
+      "name": "exact_match",
+      "value": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n": 60
+    },
+    "groundedness": {
+      "name": "groundedness",
+      "value": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 65
+    },
+    "hit_rate@1": {
+      "name": "hit_rate@1",
+      "value": 0.8333333333333334,
+      "ci_low": 0.7333333333333333,
+      "ci_high": 0.9166666666666666,
+      "n": 60
+    },
+    "hit_rate@3": {
+      "name": "hit_rate@3",
+      "value": 0.9166666666666666,
+      "ci_low": 0.8333333333333334,
+      "ci_high": 0.9833333333333333,
+      "n": 60
+    },
+    "hit_rate@5": {
+      "name": "hit_rate@5",
+      "value": 0.9666666666666667,
+      "ci_low": 0.9166666666666666,
+      "ci_high": 1.0,
+      "n": 60
+    },
+    "judge_correct": {
+      "name": "judge_correct",
+      "value": 0.8333333333333334,
+      "ci_low": 0.7333333333333333,
+      "ci_high": 0.9166666666666666,
+      "n": 60
+    },
+    "latency_ms": {
+      "name": "latency_ms",
+      "value": 3.832815383346035,
+      "ci_low": 2.6553617287292863,
+      "ci_high": 5.178917076555081,
+      "n": 65
+    },
+    "mrr": {
+      "name": "mrr",
+      "value": 0.8846031746031746,
+      "ci_low": 0.8110178571428571,
+      "ci_high": 0.9483333333333334,
+      "n": 60
+    },
+    "ndcg@1": {
+      "name": "ndcg@1",
+      "value": 0.8333333333333334,
+      "ci_low": 0.7333333333333333,
+      "ci_high": 0.9166666666666666,
+      "n": 60
+    },
+    "ndcg@3": {
+      "name": "ndcg@3",
+      "value": 0.848976599263321,
+      "ci_low": 0.770232486805032,
+      "ci_high": 0.9182187436508251,
+      "n": 60
+    },
+    "ndcg@5": {
+      "name": "ndcg@5",
+      "value": 0.8794572865512763,
+      "ci_low": 0.8138677696188354,
+      "ci_high": 0.9380935971240894,
+      "n": 60
+    },
+    "ndcg@budget": {
+      "name": "ndcg@budget",
+      "value": 0.8309537356517063,
+      "ci_low": 0.7332886621919643,
+      "ci_high": 0.9180660514775574,
+      "n": 60
+    },
+    "precision@1": {
+      "name": "precision@1",
+      "value": 0.8333333333333334,
+      "ci_low": 0.7333333333333333,
+      "ci_high": 0.9166666666666666,
+      "n": 60
+    },
+    "precision@3": {
+      "name": "precision@3",
+      "value": 0.36666666666666664,
+      "ci_low": 0.32777777777777767,
+      "ci_high": 0.4111111111111111,
+      "n": 60
+    },
+    "precision@5": {
+      "name": "precision@5",
+      "value": 0.23999999999999996,
+      "ci_low": 0.2133333333333333,
+      "ci_high": 0.26666666666666666,
+      "n": 60
+    },
+    "precision@budget": {
+      "name": "precision@budget",
+      "value": 0.75,
+      "ci_low": 0.6583333333333333,
+      "ci_high": 0.8416666666666667,
+      "n": 60
+    },
+    "recall@1": {
+      "name": "recall@1",
+      "value": 0.711111111111111,
+      "ci_low": 0.6082638888888889,
+      "ci_high": 0.8055555555555556,
+      "n": 60
+    },
+    "recall@3": {
+      "name": "recall@3",
+      "value": 0.8722222222222221,
+      "ci_low": 0.7915972222222222,
+      "ci_high": 0.9416666666666667,
+      "n": 60
+    },
+    "recall@5": {
+      "name": "recall@5",
+      "value": 0.9416666666666667,
+      "ci_low": 0.8833333333333333,
+      "ci_high": 0.9916666666666667,
+      "n": 60
+    },
+    "recall@budget": {
+      "name": "recall@budget",
+      "value": 0.7666666666666665,
+      "ci_low": 0.6694444444444445,
+      "ci_high": 0.8584027777777775,
+      "n": 60
+    }
+  },
+  "per_question": {
+    "q001": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.6309297535714575,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.6309297535714575,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.5,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.3555555555555555,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.9090909090909091,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 2.5616999773774296
+    },
+    "q002": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5714285714285715,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 3.099899971857667
+    },
+    "q003": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.20833333333333334,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 2.454799978295341
+    },
+    "q004": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5666666666666667,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.4792000292800367
+    },
+    "q005": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.39999999999999997,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.9505999914836138
+    },
+    "q006": {
+      "recall@1": 0.3333333333333333,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 0.6666666666666666,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 0.7653606369886217,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.6,
+      "ndcg@5": 0.9674679834891693,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.3333333333333333,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.3333333333333333,
+      "answer_f1": 0.2926829268292683,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.9,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 2.555899991421029
+    },
+    "q007": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3076923076923077,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.7771000091452152
+    },
+    "q008": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "hit_rate@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "ndcg@5": 0.0,
+      "hit_rate@5": 0.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.16666666666666666,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.2222222222222222,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.75,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8080000116024166
+    },
+    "q009": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.5,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.38685280723454163,
+      "hit_rate@3": 1.0,
+      "recall@5": 0.5,
+      "precision@5": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.5,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.0,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.0625,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.5966999742668122
+    },
+    "q010": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 0.5,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.6131471927654584,
+      "hit_rate@3": 1.0,
+      "recall@5": 0.5,
+      "precision@5": 0.2,
+      "ndcg@5": 0.6131471927654584,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 0.5,
+      "ndcg@budget": 0.6131471927654584,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.5818181818181818,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 3.0382000259123743
+    },
+    "q011": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.43589743589743585,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8428999863099307
+    },
+    "q012": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.18181818181818182,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.7368000224232674
+    },
+    "q013": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.4242424242424242,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 2.3040000232867897
+    },
+    "q014": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.25,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.407400006428361
+    },
+    "q015": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.5,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.5,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.3333333333333333,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.05,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.17647058823529413,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.2665999820455909
+    },
+    "q016": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "hit_rate@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "ndcg@5": 0.0,
+      "hit_rate@5": 0.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 0.14285714285714285,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.06896551724137932,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.125,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.8568999948911369
+    },
+    "q017": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.5454545454545454,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8364000241272151
+    },
+    "q018": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.6399999999999999,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.6041000306140631
+    },
+    "q019": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.49438202247191015,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.5154999962542206
+    },
+    "q020": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "hit_rate@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.2,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.07142857142857142,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.20833333333333331,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.1944000143557787
+    },
+    "q021": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3055555555555556,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.6398000007029623
+    },
+    "q022": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.6511627906976745,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.808700016932562
+    },
+    "q023": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.09999999999999999,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.10526315789473684,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.5768000264652073
+    },
+    "q024": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5263157894736842,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.4293000092729926
+    },
+    "q025": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5454545454545454,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.5013999762013555
+    },
+    "q026": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.6451612903225806,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.5161999908741564
+    },
+    "q027": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.6206896551724138,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 2.3305999930016696
+    },
+    "q028": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.6857142857142857,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.517400010721758
+    },
+    "q029": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 0.5,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.6131471927654584,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 0.8772153153380493,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 0.5,
+      "ndcg@budget": 0.6131471927654584,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.47619047619047616,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.6605999660678208
+    },
+    "q030": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.489795918367347,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 3.0106999911367893
+    },
+    "q031": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3846153846153846,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.6428571428571428,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.7093000167515129
+    },
+    "q032": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 0.5,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.6131471927654584,
+      "hit_rate@3": 1.0,
+      "recall@5": 0.5,
+      "precision@5": 0.2,
+      "ndcg@5": 0.6131471927654584,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.4090909090909091,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.071599981514737
+    },
+    "q033": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.13953488372093026,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.4782608695652174,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 19.97960000880994
+    },
+    "q034": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.6309297535714575,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.6309297535714575,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 0.6309297535714575,
+      "chunks_in_budget": 2.0,
+      "mrr": 0.5,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.07142857142857142,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8348999836016446
+    },
+    "q035": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3636363636363636,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 6.61979999858886
+    },
+    "q036": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.40624999999999994,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.6111111111111112,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 10.515500005567446
+    },
+    "q037": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3513513513513513,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 11.568799993256107
+    },
+    "q038": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5161290322580645,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 7.706699980190024
+    },
+    "q039": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3255813953488372,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.8,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.6382999999914318
+    },
+    "q040": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.125,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.10526315789473684,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.1537999962456524
+    },
+    "q041": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.6165000086184591
+    },
+    "q042": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 0.9197207891481876,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 0.9197207891481876,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.26666666666666666,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.6538461538461539,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.6551000114995986
+    },
+    "q043": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.4444444444444445,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.7455000013578683
+    },
+    "q044": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.7727272727272727,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.597400008700788
+    },
+    "q045": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.45714285714285713,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 20.43879998382181
+    },
+    "q046": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.5,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.5,
+      "answer_f1": 0.6031746031746033,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 4.7172999766189605
+    },
+    "q047": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.2608695652173913,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.754599972628057
+    },
+    "q048": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5454545454545454,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.8542000034358352
+    },
+    "q049": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "hit_rate@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.2,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.125,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.3076923076923077,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 11.044700018828735
+    },
+    "q050": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 0.5,
+      "citation_recall": 1.0,
+      "answer_f1": 0.32258064516129037,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 20.86530000087805
+    },
+    "q051": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.5,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 19.152300024870783
+    },
+    "q052": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.17647058823529413,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8848999859765172
+    },
+    "q053": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.3829787234042553,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.921799975913018
+    },
+    "q054": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.64,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.8721000049263239
+    },
+    "q055": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.38095238095238093,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 0.9278999932575971
+    },
+    "q056": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "ndcg@3": 0.0,
+      "hit_rate@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 0.2,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.0,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.11764705882352941,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 8.841200004098937
+    },
+    "q057": {
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 0.5,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.34285714285714286,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.9919000042136759
+    },
+    "q058": {
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "ndcg@1": 0.0,
+      "hit_rate@1": 0.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "ndcg@3": 0.5,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "ndcg@5": 0.5,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.0,
+      "precision@budget": 0.0,
+      "ndcg@budget": 0.0,
+      "chunks_in_budget": 1.0,
+      "mrr": 0.3333333333333333,
+      "citation_precision": 0.0,
+      "citation_recall": 0.0,
+      "answer_f1": 0.0606060606060606,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.125,
+      "judge_correct": 0.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 8.02149999071844
+    },
+    "q059": {
+      "recall@1": 0.5,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 1.0,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.4,
+      "ndcg@5": 1.0,
+      "hit_rate@5": 1.0,
+      "recall@budget": 1.0,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "answer_f1": 0.31578947368421056,
+      "exact_match": 0.0,
+      "evidence_coverage": 1.0,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.6331999795511365
+    },
+    "q060": {
+      "recall@1": 0.3333333333333333,
+      "precision@1": 1.0,
+      "ndcg@1": 1.0,
+      "hit_rate@1": 1.0,
+      "recall@3": 0.6666666666666666,
+      "precision@3": 0.6666666666666666,
+      "ndcg@3": 0.7653606369886217,
+      "hit_rate@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.6,
+      "ndcg@5": 0.9674679834891693,
+      "hit_rate@5": 1.0,
+      "recall@budget": 0.6666666666666666,
+      "precision@budget": 1.0,
+      "ndcg@budget": 1.0,
+      "chunks_in_budget": 2.0,
+      "mrr": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.6666666666666666,
+      "answer_f1": 0.5,
+      "exact_match": 0.0,
+      "evidence_coverage": 0.9166666666666667,
+      "judge_correct": 1.0,
+      "groundedness": 1.0,
+      "abstention_correct": 1.0,
+      "latency_ms": 1.1529000184964389
+    },
+    "u001": {
+      "groundedness": 1.0,
+      "abstention_correct": 0.0,
+      "latency_ms": 11.345300008542836
+    },
+    "u002": {
+      "groundedness": 1.0,
+      "abstention_correct": 0.0,
+      "latency_ms": 12.001399998553097
+    },
+    "u003": {
+      "groundedness": 1.0,
+      "abstention_correct": 0.0,
+      "latency_ms": 10.293699975591153
+    },
+    "u004": {
+      "groundedness": 1.0,
+      "abstention_correct": 0.0,
+      "latency_ms": 1.0423999920021743
+    },
+    "u005": {
+      "groundedness": 1.0,
+      "abstention_correct": 0.0,
+      "latency_ms": 4.084199987119064
+    }
+  }
+}

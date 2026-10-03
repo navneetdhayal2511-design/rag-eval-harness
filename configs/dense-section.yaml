@@ -1,0 +1,28 @@
+# Dense-only arm. Useful mainly as the other half of the hybrid comparison:
+# on a corpus this size, latent semantic vectors alone lose to BM25 on the
+# questions that hinge on an exact number or clause name.
+name: dense-section
+
+dataset:
+  corpus_dir: ../datasets/aurora-health/corpus
+  questions: ../datasets/aurora-health/questions.jsonl
+  human_labels: ../datasets/aurora-health/human_labels.jsonl
+
+chunker:
+  name: section
+  options:
+    max_chars: 1200
+
+retriever:
+  type: dense
+  embedder:
+    name: tfidf-svd
+    options:
+      dim: 192
+
+top_k: 14
+
+# Shared context budget. Every pipeline in the sweep shows the generator the
+# same amount of text, so chunking strategies are compared on what they put in
+# that budget rather than on how large their chunks happen to be.
+context_chars: 2000
