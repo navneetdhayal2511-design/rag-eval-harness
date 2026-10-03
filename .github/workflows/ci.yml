@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: pip install -e ".[dev]"
+
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Type check
+        run: mypy
+
+      - name: Test
+        run: pytest --cov=rageval --cov-report=term-missing
+
+  evaluation:
+    # The regression gate. Runs the golden set and fails the build if retrieval
+    # or answer quality has moved against the committed baseline. Everything
+    # here is offline and deterministic, so a red result means a real change.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -e .
+
+      - name: Validate the golden set
+        # Fails if a gold quote no longer resolves, which would otherwise show
+        # up as a silent accuracy drop.
+        run: rageval validate configs/bm25-fixed.yaml
+
+      - name: Run the evaluation
+        run: rageval run configs/bm25-fixed.yaml --run-id candidate --out runs/candidate.json
+
+      - name: Check the regression gate
+        run: rageval gate runs/candidate.json --baseline baselines/bm25-fixed.json
+
+      - name: Report
+        if: always()
+        run: |
+          echo '## Evaluation' >> "$GITHUB_STEP_SUMMARY"
+          rageval run configs/bm25-fixed.yaml --run-id candidate --out runs/candidate.json \
+            >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation-run
+          path: runs/candidate.json
