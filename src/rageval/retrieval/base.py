@@ -23,7 +23,8 @@ def top_k_indices(scores: NDArray[np.float32], k: int) -> NDArray[np.int64]:
         return np.empty(0, dtype=np.int64)
     candidates = np.argpartition(-scores, k - 1)[:k] if k < scores.size else np.arange(scores.size)
     order = np.lexsort((candidates, -scores[candidates]))
-    return candidates[order].astype(np.int64, copy=False)
+    ranked: NDArray[np.int64] = candidates[order].astype(np.int64, copy=False)
+    return ranked
 
 
 class Retriever(ABC):

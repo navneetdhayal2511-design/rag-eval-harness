@@ -18,7 +18,8 @@ def l2_normalise(matrix: Matrix) -> Matrix:
     """Row-normalise so cosine similarity reduces to a single matrix product."""
     norms = np.linalg.norm(matrix, axis=1, keepdims=True)
     np.maximum(norms, 1e-12, out=norms)
-    return (matrix / norms).astype(np.float32, copy=False)
+    normalised: Matrix = (matrix / norms).astype(np.float32, copy=False)
+    return normalised
 
 
 class Embedder(ABC):
